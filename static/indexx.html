@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise RAG Assistant</title>
+    <link rel="stylesheet" href="/static/stylee.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Enterprise AI</div>
+        <span class="status"><span class="status-dot"></span> RAG Assistant</span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <h1>Your Enterprise Knowledge Assistant</h1>
+            <p>Ask questions about your company documents and get answers grounded in your knowledge base.</p>
+        </section>
+
+        <section class="chat-card">
+            <div id="messages" class="messages">
+                <div class="message assistant">
+                    <div class="message-label">AI Assistant</div>
+                    <div class="message-content">
+                        Hello! Ask me a question about your uploaded company documents.
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggestions">
+                <button type="button" class="suggestion"
+                    onclick="askSuggested('How many annual paid leave days do employees get?')">
+                    Annual leave policy
+                </button>
+                <button type="button" class="suggestion"
+                    onclick="askSuggested('How do employees request leave?')">
+                    Leave request process
+                </button>
+                <button type="button" class="suggestion"
+                    onclick="askSuggested('When is medical documentation required?')">
+                    Sick leave requirements
+                </button>
+            </div>
+
+            <form id="questionForm" class="composer">
+                <textarea id="questionInput"
+                    placeholder="Ask a question about your documents..."
+                    rows="2" required></textarea>
+                <button id="sendButton" type="submit">Ask AI</button>
+            </form>
+
+            <p class="hint">Answers are generated using your indexed documents.</p>
+        </section>
+
+        <section class="sources-section">
+            <h2>Sources</h2>
+            <div id="sources">
+                <p>Sources will appear here after you ask a question.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/work.js"></script>
+</body>
+</html>
